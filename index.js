@@ -4,12 +4,14 @@ const { context } = require("@actions/github/lib/utils");
 const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
 //#region Inputs
+const needsReviewLabelName = core.getInput("needs-review-label-name");
 const oneApprovalLabelName = core.getInput("one-approval-label-name");
 const twoApprovalsLabelName = core.getInput("two-approvals-label-name");
 const changesRequestedLabelName = core.getInput("changes-requested-label-name");
 const updatedPrLabelName = core.getInput("updated-pr-label-name");
 
 const labelNames = [
+  needsReviewLabelName,
   oneApprovalLabelName,
   twoApprovalsLabelName,
   changesRequestedLabelName,
@@ -44,10 +46,10 @@ async function runAction() {
   let reviewLabels = getLabels(reviews);
 
   // add updated if there are new commits (and remove changes requested if it's present)
-  if ((eventName === "pull_request" || eventName === "pull_request_target") && action === "synchronize") {
+  if ((eventName === "pull_request" || eventName === "pull_request_target") && action === "synchronize" && reviews.length > 0) {
     reviewLabels.push(updatedPrLabelName);
     reviewLabels = reviewLabels.filter(
-      (label) => label !== changesRequestedLabelName
+        (label) => label !== changesRequestedLabelName
     );
   }
 
@@ -209,15 +211,16 @@ function getLabels(reviewsArray) {
   const changesRequestedCount = reviews.filter(
     (review) => review.state === "CHANGES_REQUESTED"
   ).length;
-  const labels = [];
+  let labels = [];
 
-  if (approvedCount === 1) {
+  if (approvedCount === 0 && changesRequestedCount === 0) {
+    labels.push(needsReviewLabelName);
+  } else if (changesRequestedCount > 0) {
+    labels.push(changesRequestedLabelName);
+  } else if (approvedCount === 1) {
     labels.push(oneApprovalLabelName);
   } else if (approvedCount >= 2) {
     labels.push(twoApprovalsLabelName);
-  }
-  if (changesRequestedCount > 0) {
-    labels.push(changesRequestedLabelName);
   }
 
   return labels;
