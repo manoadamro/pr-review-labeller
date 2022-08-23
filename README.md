@@ -93,7 +93,7 @@ jobs:
     name: Update PR Labels
     steps:
       - name: Update Labels
-        uses: danilo-delbusso/pr-review-labeller@v1.2.3
+        uses: manoadamro/pr-review-labeller@main  # original: danilo-delbusso/pr-review-labeller@1.2.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -120,7 +120,7 @@ jobs:
     name: Update PR Labels
     steps:
       - name: Update Labels
-        uses: danilo-delbusso/pr-review-labeller@v1.2.3
+        uses: manoadamro/pr-review-labeller@main  # original: danilo-delbusso/pr-review-labeller@1.2.3
         with:
           one-approval-label-name: "1 approval"
           two-approvals-label-name: "2 approvals"
