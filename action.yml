@@ -1,6 +1,10 @@
 name: "Update PR Status Labels"
 description: "Update the labels of a PR, depending on its review status"
 inputs:
+  needs-review-label-name:
+    description: "Name of the label to show when the PR has zero approvals"
+    required: true
+    default: "needs review"
   one-approval-label-name:
     description: "Name of the label to show when the PR has one approval"
     required: true
