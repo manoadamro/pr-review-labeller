@@ -27,8 +27,7 @@ You will simply need to specify their names in the `.yml` configuration.
 
 ### `needs-review-label-name`
 
-**Required** Name of the label to show when the PR has zero approvals. Defaults to `review`.
-
+**Required** Name of the label to show when the PR has zero approvals. Defaults to `needs review`.
 
 ### `one-approval-label-name`
 
