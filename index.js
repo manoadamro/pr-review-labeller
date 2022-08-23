@@ -146,9 +146,9 @@ function performChecks() {
   const eventName = context.eventName;
   const action = context.payload.action;
 
-  if (labelNames.filter((l) => l).length !== 4) {
+  if (labelNames.filter((l) => l).length !== labelNames.length) {
     throw new Error(
-      "You need to specify inputs for `one-approval-label-name`, `two-approvals-label-name`, `changes-requested-label-name`, and `updated-pr-label-name`"
+      "You need to specify inputs for `needs-review-label-name`, `one-approval-label-name`, `two-approvals-label-name`, `changes-requested-label-name`, and `updated-pr-label-name`"
     );
   }
 
