@@ -1,4 +1,4 @@
-## This repo has been forked from [danilo-delbusso/pr-review-labeller](https://github.com/danilo-delbusso/pr-review-labeller) and all of the hard work was already done (much credit to the original author(s)). 
+## This repo has been forked from [danilo-delbusso/pr-review-labeller](https://github.com/danilo-delbusso/pr-review-labeller) and all of the hard work was already done. Much credit to the original author(s). 
 
 ### This fork simply adds an extra label for 'needs review'. 
 
