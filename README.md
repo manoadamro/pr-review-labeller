@@ -25,6 +25,11 @@ You will simply need to specify their names in the `.yml` configuration.
 
 ## Inputs
 
+### `needs-review-label-name`
+
+**Required** Name of the label to show when the PR has zero approvals. Defaults to `review`.
+
+
 ### `one-approval-label-name`
 
 **Required** Name of the label to show when the PR has one approval. Defaults to `1 approval`.
@@ -55,9 +60,15 @@ You can replace `pull_request` with `pull_request_target` if you need to.
 name: Update PR Labels
 on:
   pull_request_review:
-    types: [submitted]
+    types:
+      - submitted
+      - edited
+      - dismissed
   pull_request:
-    types: [synchronize]
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
   update-pr-labels:
@@ -76,9 +87,15 @@ jobs:
 name: Update PR Labels
 on:
   pull_request_review:
-    types: [submitted]
+    types:
+      - submitted
+      - edited
+      - dismissed
   pull_request:
-    types: [synchronize]
+    types:
+      - opened
+      - reopened
+      - synchronize
 
 jobs:
   update-pr-labels:
