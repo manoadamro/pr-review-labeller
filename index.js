@@ -60,7 +60,7 @@ async function runAction() {
     !arraysAreEqual(currentReviewLabels, reviewLabels) &&
     currentReviewLabels.includes(updatedPrLabelName)
   ) {
-    currentReviewLabels = currentReviewLabels.filter(
+    reviewLabels = reviewLabels.filter(
       (label) => label !== updatedPrLabelName
     );
   }
