@@ -10,7 +10,7 @@ For this reason, I highly recommend using [the original](https://github.com/dani
 
 Once I'm confident this works how I want it to, I'll create a release, or open a PR to the original if the author is willing to accept it.
 
-Until then, 'here be dragons'.
+Until then, `here be dragons`.
 
 (The rest of the readme is from the original repo, updated to include the added field and the event types to trigger it).
 
