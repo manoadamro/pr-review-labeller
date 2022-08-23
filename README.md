@@ -14,6 +14,8 @@ Until then, 'here be dragons'.
 
 (The rest of the readme is from the original repo, updated to include the added field and the event types to trigger it).
 
+---
+
 ### Attention! 🚨
 
 If you're using `GITHUB_TOKEN`, you'll only be able to use this action for PRs opened within the same repository.
