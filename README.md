@@ -1,4 +1,20 @@
- ### Attention! 🚨
+## This repo has been forked from [danilo-delbusso/pr-review-labeller](https://github.com/danilo-delbusso/pr-review-labeller) and all of the hard work was already done (much credit to the original author(s)). 
+
+### This fork simply adds an extra label for 'needs review'. 
+
+It's something I needed for a project of mine and is largely untested (it will probably fall over and die).
+I'm currently using it in said project and will make any fixes etc as necessary.
+
+As a ~filthy degenerate~ badass gangsta, I've been committing to master, so bare that in mind if you plan on using this madness. 
+For this reason, I highly recommend using [the original](https://github.com/danilo-delbusso/pr-review-labeller) unless you really need the 'needs review' status.
+
+Once I'm confident this works how I want it to, I'll create a release, or open a PR to the original if the author is willing to accept it.
+
+Until then, 'here be dragons'.
+
+(The rest of the readme is from the original repo, updated to include the added field and the event types to trigger it).
+
+### Attention! 🚨
 
 If you're using `GITHUB_TOKEN`, you'll only be able to use this action for PRs opened within the same repository.
 
