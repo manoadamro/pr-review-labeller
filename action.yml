@@ -22,7 +22,7 @@ inputs:
     required: true
     default: "updated"
 runs:
-  using: "node12"
+  using: "node18"
   main: "index.js"
 branding:
   icon: "git-pull-request"
