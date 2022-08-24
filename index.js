@@ -161,11 +161,11 @@ function performChecks() {
     );
   }
 
-  if (eventName === "pull_request_review" && action !== "submitted") {
-    throw new Error(
-      "`pull_request_review` events only supports `submitted` type. "
-    );
-  }
+  // if (eventName === "pull_request_review" && action !== "submitted") {
+  //   throw new Error(
+  //     "`pull_request_review` events only supports `submitted` type. "
+  //   );
+  // }
 
   if ((eventName === "pull_request" || eventName === "pull_request_target") && action !== "synchronize") {
     throw new Error("`pull_request`/`pull_request_target` events only supports `synchronize` type. ");
